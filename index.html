@@ -135,6 +135,14 @@
                    class="external-link button is-normal is-rounded is-dark">
                   <span>Philosopy</span>
                   </a>
+                <a href="#hardware"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Hardware</span>
+                  </a>
+                <a href="#methods"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Methods</span>
+                  </a>
                 <a href="#robothon"
                    class="external-link button is-normal is-rounded is-dark">
                   <span>Robothon2023</span>
@@ -143,10 +151,8 @@
                    class="external-link button is-normal is-rounded is-dark">
                   <span>Publications</span>
                   </a>
-                <a href="#hardware"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span>Hardware</span>
-                  </a>
+                <img src="assets/hummus_logo.jpeg" style='max-height: 250px' alt="">
+                <img src="assets/group_image.jpeg" style='max-height: 200px' alt="">
               </span>
             </div>
           </div>
@@ -159,14 +165,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="assets/hummus_logo.jpeg" alt="">
-      <img src="assets/group_image.jpeg" alt="">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./assets/compliant_fabrics.mp4"
+      <video id="teaser" autoplay muted controls loop playsinline height="100%">
+        <source src="./assets/robocup_hummus.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Placeholder Video</span> Hummus approach to trajectory generation
+        <span class="dnerf">Qualification Video</span> 
       </h2>
     </div>
   </div>
@@ -235,6 +239,183 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!--Methods -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 id="methods" class="title is-3">Robothon 2023, Platonics</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Navigation among Humans</h3>
+          <p>
+            To successfully integrate and accept mobile robots in human-centered
+            spaces, prioritizing social navigation is essential. This enhances
+            efficiency and promotes a socially intuitive interaction,
+            considering norms and preferences. Emphasizing the robot’s ability
+            to navigate considerately fosters a positive user experience,
+            encouraging widespread acceptance and trust in daily use. 
+
+            Our social navigation planner is based on the foundation of Model
+            Predictive Control (MPC). This choice of utilizing MPC as the
+            underlying framework for our social navigation system empowers the
+            robot with the capability to dynamically plan and optimize its
+            movements, taking into account not only the environmental
+            constraints but also the intricacies of social interactions. By
+            leveraging the predictive capabilities of MPC, the planner exhibits
+            responsive motions accounting for the predicted future behavior of
+            the surrounding people. We specifically build on the MPC formulation
+            for navigation among dynamic obstacles and humans. Furthermore, we
+            perform free-space composition based on the lidar data to derive
+            linear constraints for static collision avoidance. The cost function
+            of the MPC can then be adapted to represent the desired social
+            behavior.
+          </p>
+          <video id="teaser" autoplay muted loop playsinline controls height="100%">
+            <source src="./assets/moving_among_humans.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="title is-4">Interactive Navigation</h3>
+          <p>
+            In the context of human-centered environments, successful navigation
+            often demands the ability to interact with specific obstacles. e.g.
+            a laundry basket which blocks the robot's path. This concept is
+            often termed as interactive navigation. Unlike mere collision
+            avoidance, interactive navigation entails a more nuanced approach,
+            allowing the robot to engage with obstacles strategically, perhaps
+            by repositioning, to achieve its navigational objectives effectively
+            in settings. 
+
+            The interactive skill is developed based on the nonprehensile
+            manipulation capability of the mobile base, with the onboard arm
+            serving as the "eyes" for tracking and locating undesired obstacles.
+            Nonprehensile manipulation, characterized by not requiring precise
+            grasping of objects, allows the robot to manipulate objects
+            irrespective of their shape, size, or mass. Specifically, we employ
+            the mobile base to push the object out of its path. Through a
+            thorough analysis of contact conditions during pushing, we have
+            devised a stable pushing approach. To
+            enhance the flexibility of the pushing process, we leverage the
+            physics simulator, Isaac Gym, and employ the sampling-based control
+            method, Model Predictive Path Integral (MPPI), for motion planning
+            during pushing maneuvers. This combination of capabilities enables
+            the robot to navigate dynamically through its environment by
+            intelligently interacting with obstacles and adapting its movements
+            accordingly.
+          </p>
+          <h3 class="title is-4">Safe Manipulation</h3>
+          <p>
+            Our approach to trajectory generation is based on optimization
+            fabrics. This geometric approach for trajectory
+            generation encodes different behaviors, such as collision avoidance
+            or joint-limit avoidance into differential equations of second
+            order. Using operator from differential geometry, namely pull-back
+            and push-forward, it allows to combine behaviors from different
+            task-manifold into one smooth policy that converges to the goal
+            state.
+
+            Our recent adaptation to dynamic environments
+            allows to deploy this approach to human-shared environments.
+            Optimization fabrics offer a versatile framework for trajectory
+            generation in changing environments, because it is highly reactive
+            and safe. Despite its advantages, optimization
+            fabrics suffer from the same problem as most other trajectory
+            generation methods, such as sampling-based planners: it is
+            incredibly hard to program the logic for grasps of products.
+            Specifically, grasp must often be hand-composed of pre-grasp, grasp
+            and post-grasp poses. We address this shortcoming, by relying on
+            human reasoning and understanding of the scene and the product to be
+            grasped at hand. Following our philosophy, the human operator can
+            actively teach the manipulator to grasp a certain product (or a
+            class of products) by dragging the robot through the workspace. This
+            approach, often referred to as learning-from-demonstration, is the
+            key for successful grasping in our approach and can  seamlessly be
+            integrated with optimization fabrics.
+            </p>
+
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
+              <source src="./assets/teaching_trajectory.mp4"
+                      type="video/mp4">
+            </video>
+
+            <p>
+            To provide even more safety in human-shared environments, we use a
+            compliant low-level controller for tracking the desired velocity
+            produced by optimization fabrics. Our low-level controller is a
+            simple PID controller in velocity space that can be adapted online
+            if a weight is attached to the end-effector. This choice is well in
+            line with our philosophy of favoring simple solutions of evolved
+            methods if possible.
+            </p>
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
+              <source src="./assets/compliant_fabrics.mp4"
+                      type="video/mp4">
+            </video>
+            <h3 class="title is-4">Adaptive Task Assignment</h3>
+            <p>
+              The high-level decision making in our robot is also based on novel
+              PhD research. The goal was to create flexible behavior without
+              having to hard-code all of the contingency plans for failed atomic
+              actions. For example, when moving to grasp a supermarket product,
+              the action could fail because the camera might lose sight of the
+              product, because someone moves the product, or because someone
+              manually stops the compliant arm from moving forward. 
+
+              A regular approach to program robots to handle these contingencies
+              is to create a rich Behavior Tree (BT) containing all fallback
+              behaviors. Our approach is also based on BTs, but we introduce a
+              novel type of leaf node to specify the desired \textit{state} to
+              be achieved rather than an \textit{action} to execute. For
+              example, the BT describes that the robot should be "holding an
+              object" but does not specify the actions to achieve this state,
+              because these change at runtime. These actions are determined at
+              runtime, as explained next. 
+
+              The resulting BT from our approach is simple to program and it
+              relies on online planning through the (also novel) application of
+              Active Inference. Based on neuroscience, Active Inference is a
+              Bayesian inference approach that we use to essentially
+              continuously calculate which of the viable atomic actions has the
+              highest probability of bringing the robot closer to the desired
+              states. This results in continual online planning and hierarchical
+              deliberation. By doing so, an agent can follow a predefined
+              offline plan while still keeping the ability to locally adapt and
+              take autonomous decisions at runtime, respecting safety
+              constraints.
+
+              We have used our OPL robot to validate the hybrid Active Inference
+              / Behavior Tree approach. The results showed improved runtime
+              adaptability with a fraction of the hand-coded nodes compared to
+              classical BTs.
+            </p>
+
+              <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                <source src="./assets/adaptive_task_planning.mp4"
+                        type="video/mp4">
+              </video>
+            <h3 class="title is-4">Object Detection</h3>
+            <p>
+              Central to our success is an advanced computer vision pipeline
+              that employs deep learning models for product and person
+              detection. The product detection camera, strategically located at
+              the end effector, enables the robot to efficiently identify and
+              interact with grocery items on store shelves. Additionally our
+              attachable perception tower at the rear of the robot, with it's 5
+              Realsense depth cameras, enables us to detect the full poses of
+              people surrounding the robot, using Yolo based keypoint detection.
+              Notably, our research in few-shot learning allows us to seamlessly
+              integrate new product classes with as few as five images, ensuring
+              adaptability and scalability.
+            </p>
+            <video id="teaser" autoplay muted loop playsinline controls height="100%">
+              <source src="./assets/adaptive_retriev.mp4"
+                      type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Methods. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <!--Robothon2023. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -251,7 +432,7 @@
         </div>
       </div>
     </div>
-    <!--/ Philosopy. -->
+    <!--/ Robothon2023. -->
 </section>
 
 <section class="section">
