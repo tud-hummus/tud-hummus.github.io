@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Hummus: RoboCup Team 2024 TU Delft">
+  <meta name="keywords" content="Robocup 2024, Mobile Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hummus: Humans & Mobile Manipulation trained by us</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/tud-amr/fabrics">
+            Fabrics
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Hummus: Robocup 2024</h1>
+          <h2 class="title is-4 publication-title">Hummus: Humans & Mobile Manipulation trained by us</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com">NAME</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com">NAME</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com">NAME</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/maxspahn">Max Spahn</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://c-salmi.github.io/">Chadi Salmi</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Delft University of Technology,</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/orgs/tud-airlab/repositories"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                <a href="#software"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Quickstart</span>
+                  </a>
+                <a href="#hardware"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Hardware</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="assets/group_image.jpeg" alt="">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./assets/compliant_fabrics.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Placeholder Video</span> Hummus approach to trajectory generation
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!--Philosophy. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Philosophy</h2>
+        <div class="content has-text-justified">
+          <p>
+            Bringing robots to human-shared environments is a challenging task,
+            and testing out capabilitise and robotic skills in home setup is the
+            perfect stress test.
+            Our solution to the RoboCup@Home challenge  2024 is built on three
+            core principles:
+            <ol>
+              <li>Human taught trajectories</li>
+              <li>Social Navigation</li>
+              <li>Simplicity wins</li>
+            </ol> 
+          </p>
+          <p>
+          <i>Some description</i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Philosopy. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!--Extras. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Extras</h2>
+        <div class="content has-text-justified">
+          <p>
+            The additional material, such as the website's source code and <thead>
+            presentation can be found in the same github organizition
+            <a href="https://github.com/orgs/tud-airlab">
+               Hummus</a>:
+            <ol>
+              <li><a href="https://github.com/tud-airlab/tud-airlab.github.io">Website source code</a></li>
+            </ol> 
+          </p>
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Extras. -->
+</section>
+
+
+
+
+</body>
+</html>
